@@ -1,0 +1,72 @@
+name: Génère le flux RSS de la diet
+
+on:
+  schedule:
+    # Tous les jours à 05:30 UTC = 06:30 ou 07:30 heure Belge (selon heure d'été/hiver)
+    - cron: "30 5 * * *"
+  workflow_dispatch: {}  # permet de lancer manuellement depuis l'onglet Actions
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installe les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Génère le flux
+        env:
+          DRIVE_FILE_ID: ${{ secrets.DRIVE_FILE_ID }}
+          SHEET_NAME: "2026 DIET (2)"
+          FEED_TITLE: "Diet du jour - DODA"
+          FEED_LINK: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/feed.xml"
+          TIMEZONE: "Europe/Brussels"
+        run: python generate_feed.py
+
+      - name: Commit et push du feed.xml
+        run: |
+          git config user.name "diet-rss-bot"
+          git config user.email "actions@github.com"
+          git add feed.xml
+          git diff --quiet --cached || git commit -m "Mise à jour de la diet du jour"
+          git push
+
+      - name: Prépare le dossier de publication
+        run: |
+          mkdir -p _site
+          cp feed.xml _site/
+
+      - name: Prépare l'artefact Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build-feed
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déploie sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

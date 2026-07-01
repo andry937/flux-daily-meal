@@ -25,7 +25,7 @@ import datetime
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape
 
-import requests
+import gdown
 import openpyxl
 
 try:
@@ -46,25 +46,17 @@ FEED_PATH = "feed.xml"
 
 
 def download_xlsx(file_id: str, dest: str) -> None:
-    """Télécharge un fichier Drive public (lien 'anyone with the link')."""
-    url = f"https://drive.google.com/uc?export=download&id={file_id}"
-    session = requests.Session()
-    resp = session.get(url, stream=True)
-    resp.raise_for_status()
+    """Télécharge un fichier Drive public (lien 'anyone with the link') via gdown.
 
-    # Google ajoute parfois une page de confirmation pour les gros fichiers
-    token = None
-    for key, value in resp.cookies.items():
-        if key.startswith("download_warning"):
-            token = value
-    if token:
-        resp = session.get(url, params={"confirm": token}, stream=True)
-        resp.raise_for_status()
-
-    with open(dest, "wb") as f:
-        for chunk in resp.iter_content(chunk_size=32768):
-            if chunk:
-                f.write(chunk)
+    gdown gère nativement la page de confirmation Google pour les gros fichiers
+    (l'ancienne méthode manuelle via `requests` plantait avec une erreur 500)."""
+    output = gdown.download(id=file_id, output=dest, quiet=False)
+    if output is None:
+        raise RuntimeError(
+            f"Échec du téléchargement du fichier Drive {file_id}. "
+            "Vérifie que le fichier est bien partagé en 'Tous les utilisateurs "
+            "disposant du lien' (rôle Lecteur)."
+        )
 
 
 def find_today_block(ws, target_date: datetime.date):
