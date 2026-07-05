@@ -4,7 +4,14 @@
     <title>Diet du jour - DODA</title>
     <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
     <description>Plan alimentaire quotidien généré automatiquement</description>
-    <lastBuildDate>Sat, 04 Jul 2026 08:12:23 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 08:27:39 +0000</lastBuildDate>
+    <item>
+      <title>Diet du 05/07/2026</title>
+      <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
+      <guid isPermaLink="false">diet-2026-07-05</guid>
+      <pubDate>Sun, 05 Jul 2026 08:27:39 +0000</pubDate>
+      <description>&lt;p&gt;Aucune diet trouvée pour le 05/07/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Diet du 04/07/2026</title>
       <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
