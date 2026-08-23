@@ -4,7 +4,14 @@
     <title>Diet du jour - DODA</title>
     <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
     <description>Plan alimentaire quotidien généré automatiquement</description>
-    <lastBuildDate>Sat, 22 Aug 2026 05:55:55 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 05:57:36 +0000</lastBuildDate>
+    <item>
+      <title>Diet du 23/08/2026</title>
+      <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
+      <guid isPermaLink="false">diet-2026-08-23</guid>
+      <pubDate>Sun, 23 Aug 2026 05:57:36 +0000</pubDate>
+      <description>&lt;p&gt;Aucune diet trouvée pour le 23/08/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Diet du 22/08/2026</title>
       <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
@@ -95,13 +102,6 @@
       <guid isPermaLink="false">diet-2026-08-10</guid>
       <pubDate>Mon, 10 Aug 2026 06:53:12 +0000</pubDate>
       <description>&lt;p&gt;&lt;strong&gt;Total estimé : ~0 kcal | G: 0g | L: 0g | P: 0g&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Diet du 09/08/2026</title>
-      <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
-      <guid isPermaLink="false">diet-2026-08-09</guid>
-      <pubDate>Sun, 09 Aug 2026 06:10:44 +0000</pubDate>
-      <description>&lt;p&gt;Aucune diet trouvée pour le 09/08/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
