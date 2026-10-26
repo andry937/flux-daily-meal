@@ -4,7 +4,14 @@
     <title>Diet du jour - DODA</title>
     <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
     <description>Plan alimentaire quotidien généré automatiquement</description>
-    <lastBuildDate>Sun, 25 Oct 2026 10:04:15 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 11:27:50 +0000</lastBuildDate>
+    <item>
+      <title>Diet du 26/10/2026</title>
+      <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
+      <guid isPermaLink="false">diet-2026-10-26</guid>
+      <pubDate>Mon, 26 Oct 2026 11:27:50 +0000</pubDate>
+      <description>&lt;p&gt;Aucune diet trouvée pour le 26/10/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Diet du 25/10/2026</title>
       <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
@@ -95,13 +102,6 @@
       <guid isPermaLink="false">diet-2026-10-13</guid>
       <pubDate>Tue, 13 Oct 2026 12:54:28 +0000</pubDate>
       <description>&lt;p&gt;Aucune diet trouvée pour le 13/10/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Diet du 12/10/2026</title>
-      <link>https://andry937.github.io/flux-daily-meal/feed.xml</link>
-      <guid isPermaLink="false">diet-2026-10-12</guid>
-      <pubDate>Mon, 12 Oct 2026 13:26:57 +0000</pubDate>
-      <description>&lt;p&gt;Aucune diet trouvée pour le 12/10/2026. Le fichier n'a peut-être pas encore été mis à jour.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
