@@ -1,9 +1,7 @@
 name: Génère le flux RSS de la diet
 
 on:
-  schedule:
-    # Tous les jours à 05:30 UTC = 06:30 ou 07:30 heure Belge (selon heure d'été/hiver)
-    - cron: "30 5 * * *"
+  # Déclenchement automatique (cron) désactivé - lancement manuel uniquement
   workflow_dispatch: {}  # permet de lancer manuellement depuis l'onglet Actions
 
 permissions:
